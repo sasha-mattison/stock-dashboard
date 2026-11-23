@@ -24,4 +24,3 @@ def get_current_price(stock: str):
 def get_historic_data(stock: str, time: Valid_Time_Periods):
     data = yf.Ticker(stock)
     return data.history(period=time.value)
-
