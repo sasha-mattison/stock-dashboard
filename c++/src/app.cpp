@@ -1,4 +1,5 @@
 #include "app.hpp"
+#include "interface.hpp"
 
 enum {
     ID_Hello = 1
@@ -29,6 +30,8 @@ Frame::Frame() : wxFrame(nullptr, wxID_ANY, "Stock Dashboard") {
 }
 
 bool App::OnInit() {
+    Interface interface;
+    std::cout << interface.python_getCurrentPrice("MSFT") << "\n";
     Frame *frame = new Frame();
     frame->Show();
     return true;

@@ -3,9 +3,8 @@
 #include <string>
 
 class Interface {
-    
-
-    double getCurrentPrice(std::string stock);
+    public:
+        double python_getCurrentPrice(std::string stock);
 
     
 };

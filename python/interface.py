@@ -1,6 +1,8 @@
 import yfinance as yf
+import pybind11
 import json
 from enum import Enum
+
 
 class Valid_Time_Periods(Enum):
     ONE_DAY = "1d"

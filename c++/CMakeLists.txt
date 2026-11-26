@@ -28,12 +28,6 @@ FetchContent_Declare(
     URL_HASH SHA256=2f20a0af0b921815e0e169ea7fec63909869323581b89d7de1553468553f6a2d
     DOWNLOAD_EXTRACT_TIMESTAMP FALSE
 )
-
-FetchContent_Declare(
-    nlohmann/json
-    URL 
-)
-
 FetchContent_MakeAvailable(pybind11)
 
 add_library(wxmathplot STATIC
@@ -58,11 +52,12 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_executable(stock-dashboard main.cpp
+add_executable(stock-dashboard
+    main.cpp
     src/app.cpp
     include/app.hpp
     src/interface.cpp
-    include/interface.hpp)
+    include/interface.hpp
+)
 target_link_libraries(stock-dashboard PRIVATE wxmathplot pybind11::embed)
-
 target_include_directories(stock-dashboard PRIVATE include)
